@@ -1,0 +1,33 @@
+{
+    "name": "InputPlayer",
+    "maps": [
+        {
+            "name": "PlayerControls",
+            "id": "ac2c5e1d-9c8b-424b-8455-04b98063f545",
+            "actions": [
+                {
+                    "name": "shoot",
+                    "type": "Button",
+                    "id": "c14053a6-c42c-4bd9-9a35-60f7b0a92379",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d97ad351-194c-42b7-97d4-26b05449f1b5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
