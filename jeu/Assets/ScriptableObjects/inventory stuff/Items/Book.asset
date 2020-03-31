@@ -18,6 +18,6 @@ MonoBehaviour:
     type: 3}
   itemPrefab: {fileID: 4378906444498258058, guid: 476da83b75cd40545879b26da034bfea,
     type: 3}
-  numberHeld: 0
+  numberHeld: 1
   usable: 0
   unique: 1

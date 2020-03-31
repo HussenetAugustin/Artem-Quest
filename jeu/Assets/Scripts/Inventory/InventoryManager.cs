@@ -7,13 +7,16 @@ public class InventoryManager : MonoBehaviour
 {
 
     [Header("Inventory information")]
-    public PlayerInventory playerInventory;
-    [SerializeField] private GameObject inventoryCanvas;
-    [SerializeField] private GameObject blankInventorySlot;
-    [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private TextMeshProUGUI descriptionText;
-    [SerializeField] private GameObject useButton;
-    [SerializeField] private InventoryItem[] setUp;
+    public PlayerInventory playerInventory; //Inventaire du joueur
+    [SerializeField] private GameObject inventoryFull; // Message à afficher quand l'inventaire est plein
+    [SerializeField] private GameObject player; // Joueur
+    [SerializeField] private GameObject inventoryCanvas; // Le canvas à activer quand on ouvre l'inventaire
+    [SerializeField] private GameObject Canvas; //
+    [SerializeField] private GameObject blankInventorySlot; // Prefab Slot à remplir
+    [SerializeField] private GameObject inventoryPanel; // Paneau contenant les Slots d'inventaire
+    [SerializeField] private TextMeshProUGUI descriptionText; // Texte ou afficher la description de l'objet
+    [SerializeField] private GameObject useButton; // Bouton pour utiliser (ici jeter l'objet)
+    [SerializeField] private InventoryItem[] setUp; //Liste des tous les items du jeu pour mettre a jour l'inventaire au Start
 
     private InventoryItem ItemToUse;
     private bool inventoryActive;
@@ -78,7 +81,7 @@ public class InventoryManager : MonoBehaviour
             item.numberHeld++;
             ReloadInventory();
         }
-        else
+        else if (playerInventory.inventory_size > playerInventory.inventory.Count)
         {
             item.numberHeld++;
             playerInventory.inventory.Add(item);
@@ -88,6 +91,8 @@ public class InventoryManager : MonoBehaviour
 
     public void removeItem()
     {
+        GameObject gameObject = Instantiate(ItemToUse.itemPrefab, player.transform.position, Quaternion.identity);
+        gameObject.GetComponent<ItemCatch>().thisManager = Canvas.GetComponent<InventoryManager>();
         //GameObject gameObj = Instantiate(ItemToUse, transform.position, Quaternion.identity);
         if (ItemToUse.numberHeld > 1)
         {
@@ -137,8 +142,22 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 inventoryCanvas.SetActive(false);
+                descriptionText.text = "";
+                useButton.SetActive(false);
                 inventoryActive = false;
             }
         }
+    }
+
+
+
+   public  void InventoryFullAppear()
+    {
+        inventoryFull.SetActive(true);
+    }
+
+    public void InventoryFullDisappear()
+    {
+        inventoryFull.SetActive(false);
     }
 }
