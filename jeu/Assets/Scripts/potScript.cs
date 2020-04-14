@@ -45,7 +45,7 @@ public class potScript : MonoBehaviour
             Destroy(gameObj, 0.35f);
         }
         gifted = true;
-        yield return new WaitForSeconds(5f);
+        yield return null;
         Destroy(this.gameObject);
     }
 

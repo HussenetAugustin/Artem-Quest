@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class DialogManager : MonoBehaviour
 {
     public GameObject dialogContainer;
+    public TextMeshProUGUI Nom;
     public Text DialogText;
     private Queue<string> dialogs;
     private float vitesse;
@@ -20,9 +23,10 @@ public class DialogManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void StartDialog(Dialog dialog)
+    public void StartDialog(Dialog dialog, string name)
     {
         dialogContainer.SetActive(true);
+        Nom.text = name;
         player.GetComponent<PlayerMovement>().currentState = PlayerState.speaking;
         dialogs = new Queue<string>();
         foreach (string s in dialog.m_sentences)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PnjState
 {
@@ -11,6 +12,7 @@ public enum PnjState
 public class PNJ : MonoBehaviour
 {
     public GameObject Notif;
+    public string Name;
     public Dialog dialog;
     private Animator anim;
     private bool playerInRange;
@@ -33,7 +35,7 @@ public class PNJ : MonoBehaviour
             if(currentState == PnjState.idle)
             {
                 player.GetComponent<PlayerMovement>().currentState = PlayerState.speaking;
-                dialogManager.StartDialog(dialog);
+                dialogManager.StartDialog(dialog,Name);
                 Notif.SetActive(false);
                 anim.SetBool("Speaking", true);
                 currentState = PnjState.speaking;

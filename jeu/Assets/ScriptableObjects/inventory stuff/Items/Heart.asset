@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDescription: Permet d'avoir plus de vie
   itemImage: {fileID: -3555468057966329373, guid: 6fc330ce3a303784bbae1009b3d13f55,
     type: 3}
-  itemPrefab: {fileID: 4378906444498258058, guid: 476da83b75cd40545879b26da034bfea,
+  itemPrefab: {fileID: 8313901272272980487, guid: 476da83b75cd40545879b26da034bfea,
     type: 3}
   numberHeld: 0
   usable: 1

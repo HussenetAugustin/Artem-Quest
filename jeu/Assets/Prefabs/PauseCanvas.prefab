@@ -250,13 +250,14 @@ GameObject:
   - component: {fileID: 4987932432041577479}
   - component: {fileID: 4987932432041577478}
   - component: {fileID: 4987932432041577497}
+  - component: {fileID: 1482891407}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4987932432041577476
 RectTransform:
   m_ObjectHideFlags: 0
@@ -337,6 +338,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1482891407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987932432041577496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4253efa1777fda41877d270f1e9d485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: ca4c2ae6c1dd35949aee0932627f51ea, type: 2}
+  player: {fileID: 0}
+  inventoryCanvas: {fileID: 4987932433346351532}
+  blankInventorySlot: {fileID: 4134693636496814697, guid: 0c88ff3dbced6064784bf0fe311d7bd6,
+    type: 3}
+  inventoryPanel: {fileID: 4987932433095142253}
+  descriptionText: {fileID: 4987932433345308065}
+  useButton: {fileID: 4987932433208779782}
+  setUp:
+  - {fileID: 11400000, guid: 7d27a28c1eb6e284d9cb3521349acbc4, type: 2}
+  - {fileID: 11400000, guid: fdf49978b689896438cc4d64c4f1db0d, type: 2}
 --- !u!1 &4987932433095142253
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +396,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000082885235, y: -0.000010323478}
-  m_SizeDelta: {x: -522.33, y: 25}
+  m_SizeDelta: {x: -522.33, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4987932433095142248
 MonoBehaviour:
@@ -684,7 +708,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4987932433208779781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1482891407}
+        m_MethodName: removeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4987932433241695999
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use
+  m_text: Drop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1111,14 +1146,13 @@ GameObject:
   - component: {fileID: 4987932433346351533}
   - component: {fileID: 4987932433346351531}
   - component: {fileID: 4987932433346351530}
-  - component: {fileID: 4987932433346351528}
   m_Layer: 5
   m_Name: inventory panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4987932433346351533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1178,21 +1212,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4987932433346351528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4987932433346351532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4253efa1777fda41877d270f1e9d485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: ca4c2ae6c1dd35949aee0932627f51ea, type: 2}
-  blankInventorySlot: {fileID: 4134693636496814697, guid: 0c88ff3dbced6064784bf0fe311d7bd6,
-    type: 3}
-  inventoryPanel: {fileID: 4987932433095142253}
-  descriptionText: {fileID: 4987932433345308065}
-  useButton: {fileID: 4987932433208779782}

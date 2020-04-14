@@ -8,12 +8,12 @@ public class InventorySlot : MonoBehaviour
 {
 
     [Header("UI stuff to change")]
-    [SerializeField] private TextMeshProUGUI itemNumberText;
-    [SerializeField] private Image itemImage;
+    [SerializeField] private TextMeshProUGUI itemNumberText; // Nombre d'items dans le stack
+    [SerializeField] private Image itemImage; // Image de l'objet à afficher dans l'inventaire
 
     [Header("Variable from the item")]
-    public InventoryItem thisItem;
-    public InventoryManager thisManager;
+    public InventoryItem thisItem; // L'item contenu dans le slot
+    public InventoryManager thisManager; // L'inventory manager
 
 
     public void Setup(InventoryItem newItem, InventoryManager newManager)
